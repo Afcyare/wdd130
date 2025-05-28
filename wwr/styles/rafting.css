@@ -1,11 +1,11 @@
 :root{
-    --primary-color: #0077B6;  /* Deep Ocean Blue */
+    --primary-color: #ebfcff;  /* Deep Ocean Blue */
     --secondary-color: #00B4D8;  /*Bright Blue*/
     --accent1-color: #90E0EF;   /* Soft Aqua */
     --accent2-color:#CAF0F8;   /* Light Sky */
     --heading-font: "Bebas Neue", sans-serif;
     --body-font: "Open Sans", sans-serif;
-    --color-333: #333
+    --color-000: #000
 }
 
 *{
@@ -16,20 +16,62 @@
 
 body{
     font-family:  var(--body-font);
-    color: var(--accent1-color);
+    color: var(--color-000);
     
 }
 
 header, main, footer{
-    width: 900px;
+    width: 1200px;
     margin: 0 auto;
+}
+header {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--accent1-color);
+}
+nav a{
+    padding: 20px;
+    text-decoration: none;
+    color: #020302;
+    font-size: 1.2rem;
+}
+nav a:hover {
+	color: #0d284a;
+	font-weight: 700;
+	text-decoration: underline;
 }
 
 h1, h2{
     font-family: var(--heading-font);
-    color: var(--primary-color);
 }
 
+.history{
+    display: flex;
+}
+.history img{
+    width: 300px;
+}
+.history-section h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.adventure-gallery{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.adventure-section h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.adventure-gallery img {
+    width: 200px;
+    height: 200px;
+    margin-right: 1rem;
+}
 
 /* consistent margin and padding declarations */
 nav, p, section,article{
@@ -70,7 +112,7 @@ nav, p, section,article{
     background-color: var(--accent1-color); /* accent1 with transparency */
     padding: 1rem;
     text-align: center;
-    color: var(--color-333);
+    color: var(--color-000);
     font-size: 2.5rem;
     margin: 0 auto;
     width: 100%;
@@ -90,7 +132,7 @@ nav, p, section,article{
 .hero article p{
     margin: 0;
     padding: 0;
-    color: var(--color-333)
+    color: var(--color-000)
 }
 .hero article img{
     float: right;
@@ -101,3 +143,10 @@ nav, p, section,article{
 }
 
 
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: #00B4D8;
+    margin-bottom: 10px;
+}
