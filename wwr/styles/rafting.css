@@ -1,152 +1,214 @@
-:root{
-    --primary-color: #ebfcff;  /* Deep Ocean Blue */
-    --secondary-color: #00B4D8;  /*Bright Blue*/
-    --accent1-color: #90E0EF;   /* Soft Aqua */
-    --accent2-color:#CAF0F8;   /* Light Sky */
-    --heading-font: "Bebas Neue", sans-serif;
-    --body-font: "Open Sans", sans-serif;
-    --color-000: #000
+/* ====================================================
+   Root Variables for Color Scheme and Fonts
+==================================================== */
+:root {
+  --primary-color: #ebfcff;      /* Deep Ocean Blue */
+  --secondary-color: #00B4D8;    /* Bright Blue */
+  --accent1-color: #90E0EF;      /* Soft Aqua */
+  --accent2-color: #CAF0F8;      /* Light Sky */
+  --heading-font: "Bebas Neue", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+  --color-dark: #000;            /* General dark text color */
+  --color-light: #333;           /* Slightly lighter for secondary text */
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ====================================================
+   Global Reset & Box Model
+==================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family:  var(--body-font);
-    color: var(--color-000);
-    
+/* ====================================================
+   Body & Typography
+==================================================== */
+body {
+  font-family: var(--body-font);
+  color: var(--color-dark);
+  background-color: var(--primary-color);
 }
 
-header, main, footer{
-    width: 1200px;
-    margin: 0 auto;
+/* ====================================================
+   Layout Containers
+==================================================== */
+header, main, footer {
+  max-width: 1000px;
+  margin: 0 auto;
 }
+
+/* ====================================================
+   Header Styling
+==================================================== */
 header {
-    margin: 1rem auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--accent1-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--accent1-color);
+  padding: 1rem 0;
+  margin-bottom: 1rem;
 }
-nav a{
-    padding: 20px;
-    text-decoration: none;
-    color: #020302;
-    font-size: 1.2rem;
+
+/* Navigation Links */
+nav a {
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--color-dark);
+  font-size: 1.2rem;
 }
+
 nav a:hover {
-	color: #0d284a;
-	font-weight: 700;
-	text-decoration: underline;
+  color: #0d284a;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
-h1, h2{
-    font-family: var(--heading-font);
+/* ====================================================
+   Typography Headings
+==================================================== */
+h1, h2 {
+  font-family: var(--heading-font);
 }
 
-.history{
-    display: flex;
-}
-.history img{
-    width: 300px;
-}
-.history-section h2{
-    text-align: center;
-    margin-bottom: 20px;
+/* ====================================================
+   Hero Section
+==================================================== */
+.hero {
+  position: relative;
+  margin-bottom: 2rem;
 }
 
-.adventure-gallery{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
-.adventure-section h2{
-    text-align: center;
-    margin-bottom: 20px;
+
+.hero h1 {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  background-color: var(--accent1-color);
+  color: var(--color-dark);
+  padding: 1rem;
+  text-align: center;
+  font-size: 2.5rem;
 }
+
+/* Hero Article Text Box */
+.hero article {
+  position: absolute;
+  top: 90px;
+  background-color: var(--accent2-color);
+  padding: 16px;
+  color: var(--color-light);
+  border-left: 8px solid var(--primary-color);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin-top: 2rem;
+}
+
+.hero article p {
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.hero article img {
+  float: right;
+  width: 125px;
+  margin-left: 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+/* ====================================================
+   History Section
+==================================================== */
+.history-section h2 {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+.history {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.history img {
+  width: 300px;
+  border-radius: 4px;
+}
+
+/* ====================================================
+   Adventure Section
+==================================================== */
+.adventure-section h2 {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+/* Responsive Gallery Grid */
+.adventure-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
 .adventure-gallery img {
-    width: 200px;
-    height: 200px;
-    margin-right: 1rem;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
-/* consistent margin and padding declarations */
-nav, p, section,article{
-    margin: 16px;
-    padding: 8px;
+/* Image Captions */
+figure {
+  margin: 0;
+  text-align: center;
 }
 
-.socialmedia a{
-    text-decoration: none;
+figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-light);
 }
-.socialmedia a img{
-    width: 32px;
-    height: 32px;
-    margin-right: 12px;
-    transition: transform 0.3s ease;
+
+/* ====================================================
+   Footer & Social Media
+==================================================== */
+footer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* Social Media Icons */
+.socialmedia a {
+  text-decoration: none;
+}
+
+.socialmedia a img {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  transition: transform 0.3s ease;
 }
 
 .socialmedia a img:hover {
   transform: scale(1.1);
 }
-.hero{
-    position: relative;
-    margin-bottom: 2rem;
-}
 
-.hero img{
-    display: block;
-    width: 100%;
-    height: auto;
-
-}
-
-.hero h1{
-     position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    background-color: var(--accent1-color); /* accent1 with transparency */
-    padding: 1rem;
-    text-align: center;
-    color: var(--color-000);
-    font-size: 2.5rem;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.hero article{
-    position: absolute;
-    top: 90px;
-    background-color: var(--accent2-color);
-    padding: 16px;
-    color: var(--color-333);
-    border-left: 8px solid var(--primary-color);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin-top: 2rem;
-
-}
-.hero article p{
-    margin: 0;
-    padding: 0;
-    color: var(--color-000)
-}
-.hero article img{
-    float: right;
-    width: 125px;
-    margin-left: 16px;
-    margin-bottom: 16px;
-    border-radius: 4px;
-}
-
-
-footer{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    background-color: #00B4D8;
-    margin-bottom: 10px;
+/* ====================================================
+   Reusable Padding & Margin for Content Blocks
+==================================================== */
+nav, p, section, article {
+  margin: 16px;
+  padding: 8px;
 }
