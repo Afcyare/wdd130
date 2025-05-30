@@ -42,8 +42,8 @@ header, main, footer {
    Header Styling
 ==================================================== */
 header {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
   background-color: var(--accent1-color);
   padding: 1rem 0;
@@ -51,6 +51,12 @@ header {
 }
 
 /* Navigation Links */
+nav ul{
+  display: flex;
+}
+nav ul li{
+  list-style: none;
+}
 nav a {
   padding: 1rem;
   text-decoration: none;
@@ -185,7 +191,7 @@ footer {
   align-items: center;
   background-color: var(--secondary-color);
   padding: 1rem;
-  color: #fff;
+  color: #000;
   margin-bottom: 1rem;
 }
 
